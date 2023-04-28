@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "Aathava Jayanth",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 190.98, "left": -168.2, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -55.57,
+      "left": -146.07,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -55.25, "left": 74.35, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -56.32,
+      "left": 306.23,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -28.27,
+      "left": -270.14,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 60.15,
+      "left": -287.59,
+      "rotate": 270,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "r1:2", "led1:C", "green", [ "h0" ] ],
+    [ "r1:1", "uno:GND.1", "black", [ "h21.27", "v47.57", "h144.66" ] ],
+    [ "led1:A", "uno:9", "red", [ "v16.36", "h23.97", "v90.93", "h191.16" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v63.66", "h-0.83" ] ],
+    [ "bz1:2", "uno:12", "red", [ "v52.29", "h19.13" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v350.43", "h-19.63" ] ],
+    [ "ultrasonic1:GND", "uno:GND.2", "black", [ "v459.96", "h-170.52" ] ],
+    [ "ultrasonic1:ECHO", "uno:6", "gold", [ "v121.03", "h-133.66" ] ],
+    [ "ultrasonic1:TRIG", "uno:7", "purple", [ "v101.4", "h-137.09" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v408.77", "h-91.35" ] ],
+    [ "pir1:GND", "uno:GND.2", "black", [ "v507.25", "h-362.63" ] ],
+    [ "pir1:OUT", "uno:4", "green", [ "v61.2", "h-303.17" ] ]
+  ],
+  "dependencies": {}
+}
